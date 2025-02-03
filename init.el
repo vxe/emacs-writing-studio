@@ -36,13 +36,10 @@
 (when (< emacs-major-version 29)
   (error "Emacs Writing Studio requires Emacs version 29 or later"))
 
-;; Custom settings in a separate file and load the custom settings
+;; Custom settings in a separate file and load the custom setting
 
-(setq-default custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(load custom-file :no-error-if-file-is-missing)
-
-(keymap-global-set "C-c w v" 'customize-variable)
+;; (keymap-global-set "C-c w v" 'customize-variable)
 
 ;; Set package archives
 
@@ -61,6 +58,10 @@
   (warning-minimum-level :emergency))
 
 ;; Load EWS functions
+(defcustom ews-root "~/.spacemacs.d/emacs-writing-studio/"
+  "Completed action that triggers resetting checkboxes for recurring tasks."
+  :group 'ews
+  :type 'string)
 
 (load-file (concat ews-root "ews.el"))
 
@@ -126,9 +127,9 @@
 
 ;; Mixed-pich mode
 
-(use-package mixed-pitch
-  :hook
-  (org-mode . mixed-pitch-mode))
+;; (use-package mixed-pitch
+;;   :hook
+;;   (org-mode . mixed-pitch-mode))
 
 ;; Window management
 ;; Split windows sensibly
@@ -584,6 +585,7 @@
 
 (use-package fountain-mode)
 
+
 ;; Markdown mode
 
 (use-package markdown-mode)
@@ -749,6 +751,6 @@
 
 ;; Use GraphViz for flow diagrams
 ;; requires GraphViz software
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((dot . t))) ; this line activates GraophViz dot
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((dot . t))) ; this line activates GraophViz dot
