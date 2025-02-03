@@ -61,11 +61,6 @@
   :group 'ews
   :type 'string)
 
-(defcustom ews-root "~/.spacemacs.d/emacs-writing-studio/"
-  "Completed action that triggers resetting checkboxes for recurring tasks."
-  :group 'ews
-  :type 'string)
-
 (defcustom ews-org-heading-level-capitalise nil
   "Minimum level of Org headings to be capitalised.
 'nil implies all levels are capitalised."
